@@ -17,7 +17,7 @@ public class PostsViewController {
     private PostService postsService;
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
-        List<Post> posts = postsService.listAllPosts();
+        Iterable<Post> posts = postsService.listAllPosts();
         model.addAttribute("posts", posts);
         model.addAttribute("appName", "Моё супер приложение");
         return "list";
