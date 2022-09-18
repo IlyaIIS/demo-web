@@ -13,9 +13,9 @@ public class PostService {
 
     public PostService(){
         posts = new ArrayList<>();
-        posts.add(new Post("post1", new Date()));
-        posts.add(new Post("post2", new Date()));
-        posts.add(new Post("post3", new Date()));
+        posts.add(new Post(0L,"post1", new Date()));
+        posts.add(new Post(1L,"post2", new Date()));
+        posts.add(new Post(2L,"post3", new Date()));
     }
 
     public List<Post> listAllPosts(){
@@ -23,6 +23,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post((long)posts.size(), text, new Date()));
     }
 }
